@@ -1,0 +1,81 @@
+body{
+	text-align:center;
+	background-image:url('https://upload.wikimedia.org/wikipedia/commons/5/52/Parrot_AR.Drone_2.JPG');
+	background-attachment:fixed;
+	background-position: center;
+	background-size:cover;
+}
+
+h1{
+	margin:30vh;
+	font-size:300%;
+	background:rgba(236, 240, 241,0.8);
+}
+
+h2{
+	padding: 5vh;
+}
+
+
+
+
+
+section{
+	margin:0;
+}
+p{
+	margin:0;
+	padding: 10px;
+}
+
+
+
+
+
+
+
+#Del{
+	background-image:url("/img/Amazon.jpg");
+	background-attachment:fixed;
+	background-position: center;
+	background-size:cover;
+	min-height:50vh;
+}
+
+#Del h2{
+	background: #2980b9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Film h2{
+	background: #c0392b;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Fun h2{
+	background: #27ae60;
+}

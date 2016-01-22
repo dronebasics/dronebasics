@@ -2,7 +2,7 @@ h1{
 	font-size:1000%;
 	position:absolute;
 	top:50%;
-	width:100vw;
+	width:100%;
 	text-align:center;
 	transform:translateY(-50%);
 }
