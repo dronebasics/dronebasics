@@ -181,7 +181,7 @@ p{
 	transform:translate(100vw, -50%);
 }
 .LeftBox:hover .Text{
-	transform:scaleX(1)translateX(0);
+	transform:scaleX(1)translateX(-0.1%);
 }
 
 
