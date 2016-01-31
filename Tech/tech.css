@@ -10,3 +10,40 @@
   min-height: 100%;
   transform:translate(-50%,-50%);
 }
+
+.Card{
+	position:fixed;
+	padding:1vw;
+	opacity:0;
+	z-index:99;
+	background: rgba(236, 240, 241,0.7);
+}
+
+#Card1{
+	bottom:10%;
+	left:50%;
+	transform:translateX(-50%);
+	padding: 2vw;
+	background:none;
+	color:white;
+}
+#Card2{
+	bottom:30%;
+	right:30%;
+}
+#Card3{
+	right:20%;
+	bottom: 40%;
+}
+#Card4{
+	left:10%;
+	top:40%;
+}
+#Card5{
+	right:10%;
+	bottom:10%;
+}
+#Card6{
+	top:20%;
+	left:50%;
+}

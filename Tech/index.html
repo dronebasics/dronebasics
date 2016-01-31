@@ -3,6 +3,8 @@
 	<head>
 		<title>Drones 101</title>
 		
+		<script src="http://cleantech4us.github.io/JSDep/skrollr.min.js"></script>
+		
 		<link rel="stylesheet" href="/uni.css" />
 		<link rel="stylesheet" href="tech.css" />
 	</head>
@@ -15,6 +17,25 @@
 				<li><a href="/Prob">Concerns</a></li>
 			</ul>
 		</nav>
+		
+		<div id="Card1" class="Card" data-0="opacity:1;" data-500="opacity:0;">
+			<h1>Drone Technology</h1>
+		</div>
+		<div id="Card2" class="Card" data-1000="opacity:0;" data-1300="opacity:1;" data-2300="opacity:1;" data-2600="opacity:0;">
+			<h2>Blades</h2>
+		</div>
+		<div id="Card3" class="Card" data-3300="opacity:0;" data-3600="opacity:1;" data-4000="opacity:1;" data-4300="opacity:0;">
+			<h2>Power</h2>
+		</div>
+		<div id="Card4" class="Card" data-4300="opacity:0;" data-4600="opacity:1;" data-5200="opacity:1;" data-5500="opacity:0;">
+			<h2>Communications</h2>
+		</div>
+		<div id="Card5" class="Card" data-6100="opacity:0;" data-6400="opacity:1;" data-7400="opacity:1;" data-7700="opacity:0;">
+			<h2>Landing Mechanism</h2>
+		</div>
+		<div id="Card6" class="Card" data-8100="opacity:0;" data-8400="opacity:1;">
+			<h2>Onboard Computer</h2>
+		</div>
 		
 		<div id="set-height"></div>
 		<p id="time"></p>
@@ -41,6 +62,12 @@
 			setInterval(function(){
 				vid.currentTime = window.pageYOffset/400;
 			}, 100);
+			
+			
+			//
+			//	SKROLLR
+			//
+			var s = skrollr.init();
 		</script>
 	
 	</body>
