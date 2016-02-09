@@ -1,0 +1,45 @@
+body{
+	text-align:center;
+	background-image:url('https://i.ytimg.com/vi/dIM_8lL4h1w/maxresdefault.jpg');
+	background-attachment:fixed;
+	background-position: center;
+	background-size:cover;
+	overflow-x:hidden;
+}
+
+h1{
+    margin-top:50vh;
+    transform:translateY(-50%);
+	font-size:300%;
+}
+
+h2{
+	padding: 5vh;
+}
+
+
+
+
+
+section{
+	margin:0;
+	background-attachment:fixed;
+	background-position: center;
+	background-size:cover;
+	min-height:40vh;
+}
+p{
+	margin:0;
+	padding: 10px;
+}
+
+section:nth-child(3){
+    margin-top:50vh;
+    background-image:url('https://c2.staticflickr.com/4/3094/2904994626_64c79250d4_b.jpg');
+}
+section:nth-child(4){
+    background-image:url('https://c2.staticflickr.com/8/7521/15680439035_3e12e242b9_k.jpg');
+}
+section:nth-child(5){
+    background-image:url('https://upload.wikimedia.org/wikipedia/commons/5/5f/Danger-keep_off_sign.jpg');
+}
