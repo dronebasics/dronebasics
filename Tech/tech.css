@@ -84,4 +84,6 @@ body {
     background-repeat:no-repeat;
     background-position:center;
     margin:-100px 0 0 -100px; /* is width and height divided by two */
+    
+    text-align:center;
 }
