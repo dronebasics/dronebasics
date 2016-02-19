@@ -117,15 +117,25 @@
 			//
 			var images = new Array()
 			console.log("WARNING About to dump massive stuff to console");
-			var loadBar = document.getElementById("status2");
 
 			for(i = 0; i <= 540; i++) {
 				images[i] = new Image()
 				images[i].src = "/img/dronevideopics/test" + pad(i, 3) + ".png";
-				if(i < 540){images[i].onload = function(){loadBar.value = i;};}
 				console.log("Loaded " + i + " of 540 images");
 			}
 			
+			var loadBar = document.getElementById("status2");
+			images[1].onload   = function(){loadBar.value = 1;};
+			images[50].onload  = function(){loadBar.value = 50;};
+			images[100].onload = function(){loadBar.value = 100;};
+			images[150].onload = function(){loadBar.value = 150;};
+			images[200].onload = function(){loadBar.value = 200;};
+			images[250].onload = function(){loadBar.value = 250;};
+			images[300].onload = function(){loadBar.value = 300;};
+			images[350].onload = function(){loadBar.value = 350;};
+			images[400].onload = function(){loadBar.value = 400;};
+			images[450].onload = function(){loadBar.value = 450;};
+			images[500].onload = function(){loadBar.value = 500;};
 			images[540].onload = function(){
 				loadBar.value = 540;
 				document.getElementById("preloader").style.display = "none";
