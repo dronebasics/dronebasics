@@ -8,9 +8,9 @@
 		<link rel="stylesheet" href="/uni.css" />
 		<link rel="stylesheet" href="tech.css" />
 		
-		<script type="text/javascript" src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<!--<script type="text/javascript" src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
 		
-		<!-- Preloader -->
+		<!-- Preloader ->
 		<script type="text/javascript">
 		    //<![CDATA[
 		        $(window).load(function() { // makes sure the whole site is loaded
@@ -19,12 +19,16 @@
 		            $('body').delay(350).css({'overflow':'visible'});
 		        })
 		    //]]>
-		</script>
+		</script>-->
 	</head>
 	<body>
 		<!-- Preloader -->
 		<div id="preloader">
-		    <div id="status">Patience...<br />This one's big</div>
+		    <div id="status">
+				Patience...<br />This one's big
+				<progress id="status2" max="540" value="0"></progress>
+			</div>
+			
 		</div>
 		
 		
@@ -59,28 +63,30 @@
 		
 		<div id="set-height"></div>
 		<p id="time"></p>
-		<video id="v0" tabindex="0" autobuffer="autobuffer" preload="preload">
+		<!--<video id="v0" tabindex="0" autobuffer="autobuffer" preload="preload">
 			<source type="video/mp4" src="/img/test.mp4">
 			</source>
 			<p>Sorry, your browser does not support the &lt;video&gt; element.</p>
-		</video>
+		</video>-->
+		<img src="/img/dronevideopics/test000.png" id="v1" alt="A video of a drone" />
 		
 		<script>
 			// select video element
-			var vid = document.getElementById('v0');
+			var vid = document.getElementById('v1');
 			//var vid = $('#v0')[0]; // jquery option
 			
 			// pause video on load
-			vid.pause();
+			/*vid.pause();
 			
 			// pause video on document scroll (stops autoplay once scroll started)
 			window.onscroll = function(){
 				vid.pause();
-			};
+			};*/
 			
 			// refresh video frames on interval for smoother playback
 			setInterval(function(){
-				vid.currentTime = window.pageYOffset/400;
+				//vid.currentTime = window.pageYOffset/400;
+				vid.src = "/img/dronevideopics/test" + pad(Math.round(window.pageYOffset / 16), 3) + ".png";
 			}, 100);
 			
 			
@@ -88,7 +94,48 @@
 			//	SKROLLR
 			//
 			var s = skrollr.init();
-		</script>
+			
+			
+			
+			
+			function pad(num, size) {
+				if(num > 540){return 540;} // Quick Hack - CHANGE TO REFLECT NUM OF FRAMES
+				
+				var s = num+"";
+				while (s.length < size) s = "0" + s;
+				return s;
+			}
+			
+			
+			
+			
+			
+			
+			
+			//
+			//IMAGE PRELOADING CRAP
+			//
+			function LoadStuff(){
+				var images = new Array()
+				console.log("WARNING About to dump massive stuff to console");
+				var loadBar = document.getElementById("status2");
+				
+				var i = 0;
+				while(true) {
+					images[i] = new Image()
+					images[i].src = "/img/dronevideopics/test" + pad(i, 3) + ".png";
+					console.log("Loaded " + i + " of 540 images");
+					loadBar.value = i;
+					if(i == 540){
+						document.getElementById("preloader").style.display = "none";
+						document.getElementsByTagName("BODY")[0].style.overflow = "visible";
+						return;
+					}
+					i++;
+				}
+			}
+			LoadStuff();
+			</script>
 	
 	</body>
 </html>
