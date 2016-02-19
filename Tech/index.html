@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Drones 101</title>
+		<title>Drones: Technology</title>
 		
 		<script src="http://cleantech4us.github.io/JSDep/skrollr.min.js"></script>
 		
 		<link rel="stylesheet" href="/uni.css" />
 		<link rel="stylesheet" href="tech.css" />
+		
+		<script type="text/javascript" src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+		
+		<!-- Preloader -->
+		<script type="text/javascript">
+		    //<![CDATA[
+		        $(window).load(function() { // makes sure the whole site is loaded
+		            $('#status').fadeOut(); // will first fade out the loading animation
+		            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+		            $('body').delay(350).css({'overflow':'visible'});
+		        })
+		    //]]>
+		</script>
 	</head>
 	<body>
+		<!-- Preloader -->
+		<div id="preloader">
+		    <div id="status">Patience...<br />This one's big</div>
+		</div>
+		
+		
+		
 		<nav>
 			<ul>
 				<li><a href="/">Home</a></li>
