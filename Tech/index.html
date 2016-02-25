@@ -28,6 +28,8 @@
 				<p>Patience, please<br />This one's big</p>
 				<p>It'll be worth it. We promise.</p>
 				<p><progress id="status2" max="540" value="0"></progress></p>
+				
+				<p id="slowConnect" style="display:none;">Slow connection? Try the compressed version <a href="orig.html">here</a>. Warning: may be werid and buggy.</p>
 			</div>
 			
 		</div>
@@ -142,6 +144,15 @@
 				document.getElementById("preloader").style.display = "none";
 				document.getElementsByTagName("BODY")[0].style.overflow = "visible";
 			};
+			
+			
+			
+			
+			
+			setTimeout(slowLoad, 30000);
+			function slowLoad(){
+				document.getElementById("slowConnect").style.display = "block";
+			}
 			</script>
 	
 	</body>
