@@ -1,8 +1,36 @@
+body{
+	background:linear-gradient(#7ccce8, white);
+}
 h1{
 	font-size:1000%;
-	position:absolute;
+	position:fixed;
 	top:50%;
 	width:100%;
 	text-align:center;
 	transform:translateY(-50%);
+}
+
+.BGCover{
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+#Drone{
+	width:10vw;
+	height:10vh;
+	
+	background-image:url();
+}
+
+
+
+
+#BG1{
+	width:150%;
+	height:100vh;
+	position:fixed;
+	z-index:-1;
+	
+	background-image:url("/img/clouds-161581.svg");
 }
