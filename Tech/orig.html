@@ -12,19 +12,46 @@
 		
 		<!-- Preloader -->
 		<script type="text/javascript">
-			//<![CDATA[
-				$(window).load(function() { // makes sure the whole site is loaded
+			var preloadVid = document.getElementById("v0");
+			
+			function checkLoad() {
+				if(!preloadVid){
+					preloadVid = document.getElementById("v0");
+					setTimeout(checkLoad, 100);
+					return;
+				}
+				if (preloadVid.readyState === 4) {
+					//preloader.parentNode.removeChild(preloader);
+					KillStuff();
+				} else {
+					setTimeout(checkLoad, 100);
+				}
+			}
+			checkLoad();
+			
+			window.addEventListener('load', checkLoad);
+			
+			function KillStuff(){
+				$('#status').fadeOut(); // will first fade out the loading animation
+				$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+				$('body').delay(350).css({'overflow':'visible'});
+			}
+			
+		</script><!--
+			
+			/*//<![CDATA[
+				/*$(window).load(function() { // makes sure the whole site is loaded
 					$('#status').fadeOut(); // will first fade out the loading animation
 					$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
 					$('body').delay(350).css({'overflow':'visible'});
 				})
 			//]]>
-		</script>
+		</script>-->
 	</head>
 	<body style="overflow:visible;">
 		<!-- Preloader -->
 		<div id="preloader">
-			<div id="status" style="background-image:url('http://cleantech4us.github.io/JSDep/preload/img/status.gif');">
+			<div id="status" style="min-height:100px;background-image:url('http://cleantech4us.github.io/JSDep/preload/img/status.gif');">
 				<!--<p>Patience, please<br />This one's big</p>
 				<p>It'll be worth it. We promise.</p>
 				<p><progress id="status2" max="540" value="0"></progress></p>-->
