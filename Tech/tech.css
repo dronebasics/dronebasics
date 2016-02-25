@@ -37,7 +37,8 @@
 }
 #Card2{
 	bottom:30%;
-	right:30%;
+	left:5vw;
+	max-width:40%;
 }
 #Card3{
 	right:20%;
