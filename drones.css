@@ -2,14 +2,16 @@ body{
 	background:linear-gradient(#7ccce8, white, #7ccce8);
 	width:100%;
 }
-h1{
-	font-size:1000%;
+#MainSplash{
 	position:fixed;
 	top:50%;
 	width:100%;
 	text-align:center;
 	transform:translateY(-50%);
 	color:#F5D76E;
+}
+#MainSplash h1{
+	font-size:1000%;
 }
 h2{
 	font-size:300%;
@@ -35,9 +37,21 @@ h2{
 	bottom:12vh;left:40vw;
 }
 
+a{
+	color:black;
+}
+a:visited{
+	color:black;
+}
+a:hover{
+	text-decoration:none;
+}
 
 
-
+p{
+	
+	z-index:9999;
+}
 
 
 #BG1{
@@ -123,11 +137,13 @@ h2{
 
 #Sec5{
 	position:fixed;
-	top:20%;
-	height:60%;
-	width:70%;
+	top:25%;
+	height:50%;
 	right:10%;
 	text-align:right;
+	
+	background:rgba(236, 240, 241,0.6);
+	padding: 0 5vw;
 	
 	display: flex;
   align-items: center;
