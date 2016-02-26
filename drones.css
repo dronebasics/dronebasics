@@ -1,5 +1,6 @@
 body{
 	background:linear-gradient(#7ccce8, white);
+	width:100%;
 }
 h1{
 	font-size:1000%;
@@ -8,6 +9,10 @@ h1{
 	width:100%;
 	text-align:center;
 	transform:translateY(-50%);
+	color:#F5D76E;
+}
+h2{
+	font-size:300%;
 }
 
 .BGCover{
@@ -26,6 +31,8 @@ h1{
 
 
 
+
+
 #BG1{
 	width:150%;
 	height:100vh;
@@ -33,4 +40,53 @@ h1{
 	z-index:-1;
 	
 	background-image:url("/img/clouds-161581.svg");
+}
+
+
+
+#Head2{
+	position:fixed;
+	left:10%;
+	bottom:20%;
+}
+
+#Text2{
+	position:fixed;
+	bottom:20%;
+	right:10vw;
+	width:40vw;
+	text-align:right;
+}
+
+
+
+#Head3{
+	position:fixed;
+	left:10%;
+	top:25%;
+}
+
+#Text3{
+	position:fixed;
+	top:35%;
+	right:10vw;
+	width:40vw;
+	text-align:right;
+}
+
+
+
+#Head4{
+	position:fixed;
+	left:10%;
+	bottom:50%;
+	max-height:10vh;
+}
+
+#Text4{
+	position:fixed;
+	bottom:40%;
+	left:10vw;
+	width:40vw;
+	text-align:left;
 }

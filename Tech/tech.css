@@ -41,20 +41,24 @@
 	max-width:40%;
 }
 #Card3{
-	right:20%;
-	bottom: 40%;
+	right:5%;
+	bottom: 30%;
+	max-width:40%;
 }
 #Card4{
 	left:10%;
 	top:40%;
+	max-width:40%;
 }
 #Card5{
 	right:10%;
 	bottom:10%;
+	max-width:40%;
 }
 #Card6{
 	top:20%;
 	left:50%;
+	max-width:40%;
 }
 
 
