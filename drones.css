@@ -31,7 +31,7 @@ h2{
 	z-index:10;
 	
 	transform:rotateY(180deg);
-	background-image:url("http://127.0.0.1:50334/img/SaroshDraws/Side_Drone.svg");
+	background-image:url("/img/SaroshDraws/Side_Drone.svg");
 	
 	
 	bottom:12vh;left:40vw;
