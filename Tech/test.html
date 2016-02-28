@@ -69,15 +69,26 @@
 			</source>
 			<p>Sorry, your browser does not support the &lt;video&gt; element.</p>
 		</video>
+		<video id="v1" tabindex="0" autobuffer="autobuffer" preload="preload">
+			<source type="video/mp4" src="/img/test2.mp4">
+			</source>
+			<p>Sorry, your browser does not support the &lt;video&gt; element.</p>
+		</video>
 		<!--<img src="/img/dronevideopics/test000.png" id="v1" alt="A video of a drone" />
 		-->
 		<script>
 			// select video element
 			var vid = document.getElementById('v0');
-			//var vid = $('#v0')[0]; // jquery option
+			var backVid = document.getElementById("v1");
+			backVid.style.opacity = 0;
 			
 			// pause video on load
 			vid.pause();
+			backVid.pause();
+			
+			
+			var scrollDown = true;
+			var lastPos = window.pageYOffset;
 			
 			// pause video on document scroll (stops autoplay once scroll started)
 			window.onscroll = function(){
@@ -85,18 +96,55 @@
 			};
 			
 			// refresh video frames on interval for smoother playback
-			/*setInterval(function(){
-				vid.currentTime = window.pageYOffset/400;
-				//vid.src = "/img/dronevideopics/test" + pad(Math.round(window.pageYOffset / 16), 3) + ".png";
+			setInterval(function(){
+				//var temp = 0;
+				
+				if(window.pageYOffset == lastPos){
+					return;
+				}
+				
+				if(window.pageYOffset > lastPos && !scrollDown){
+					window.setTimeout(function(){vid.style.opacity = 1;backVid.style.opacity = 0;}, 200);
+					//vid.style.opacity = 1;
+					//backVid.style.opacity = 0;
+					scrollDown = true;
+					//temp = 1;
+					//alert("Down");
+				} else if(window.pageYOffset < lastPos && scrollDown){
+					window.setTimeout(function(){vid.style.opacity = 0;backVid.style.opacity = 1;}, 200);
+					//vid.style.opacity = 0;
+					//backVid.style.opacity = 1;
+					scrollDown = false;
+					//temp = 2;
+					//alert("Up");
+				}
+				
+				if(scrollDown){
+					vid.currentTime = window.pageYOffset/400;
+				} else{
+					backVid.currentTime = (8650 - window.pageYOffset) / 400;
+					//alert("1");
+				}
+				
+				/*if(temp == 1){
+					vid.style.opacity = 1;
+					backVid.style.opacity = 0;
+				} else if(temp == 2){
+					vid.style.opacity = 0;
+					backVid.style.opacity = 1;
+				}*/
+				
+				
+				lastPos = window.pageYOffset;
 			}, 100);
-			*/
-			var renderLoop = function(){
+			
+			/*var renderLoop = function(){
 				requestAnimationFrame( function(){
 					vid.currentTime = window.pageYOffset/400;
 					renderLoop();
 				});
 			};
-			renderLoop();
+			renderLoop();*/
 			
 			
 			//
