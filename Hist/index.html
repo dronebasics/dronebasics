@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="/uni.css" />
 		<link rel="stylesheet" href="hist.css" />
 		
-	    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.1.1/Chart.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.1.1/Chart.js"></script>
 	</head>
 	<body>
 		<nav>
@@ -19,52 +19,64 @@
 			</ul>
 		</nav>
 		
-		<h1>Concerns</h1>
+		<h1>History</h1>
 		
 		<section>
-		    <h2>Growth Over Time</h2>
-		    <canvas id="myChart" width="400" height="400"></canvas>
+			<h2>Growth Over Time</h2>
+			<canvas id="myChart" width="400" height="400"></canvas>
 		</section>
 		
 		<script>
-		    var ctx = document.getElementById("myChart").getContext("2d");
-		    var data = {
-                labels: ["2013", "2014", "2015"],
-                datasets: [
-                    {
-                        label: "Parrot",
-                        fillColor: "rgba(41, 128, 185, 0.2)",
-                        strokeColor: "rgb(41, 128, 185)",
-                        pointColor: "rgb(41, 128, 185)",
-                        pointStrokeColor: "#fff",
-                        pointHighlightFill: "#fff",
-                        pointHighlightStroke: "rgba(220,220,220,1)",
-                        data: [180000, 530000, 1100000]
-                    },
-                    {
-                        label: "DJI",
-                        fillColor: "rgba(192, 57, 43, 0.2)",
-                        strokeColor: "rgb(192, 57, 43)",
-                        pointColor: "rgb(192, 57, 43)",
-                        pointStrokeColor: "#fff",
-                        pointHighlightFill: "#fff",
-                        pointHighlightStroke: "rgba(151,187,205,1)",
-                        data: [117400, 416000, 500000]
-                    },
-                    {
-                        label: "3D Robotics",
-                        fillColor: "rgba(39, 174, 96, 0.2)",
-                        strokeColor: "rgb(39, 174, 96)",
-                        pointColor: "rgb(39, 174, 96)",
-                        pointStrokeColor: "#fff",
-                        pointHighlightFill: "#fff",
-                        pointHighlightStroke: "rgba(151,187,205,1)",
-                        data: [0, 27000, 46000]
-                    }
-                ]
-            };
-            var myNewChart = new Chart(ctx).Line(data);
-            
+			var ctx = document.getElementById("myChart").getContext("2d");
+			var data = {
+				labels: ["2013", "2014", "2015"],
+				datasets: [
+					{
+						label: "Parrot",
+						fillColor: "rgba(41, 128, 185, 0.2)",
+						strokeColor: "rgb(41, 128, 185)",
+						pointColor: "rgb(41, 128, 185)",
+						pointStrokeColor: "#fff",
+						pointHighlightFill: "#fff",
+						pointHighlightStroke: "rgba(220,220,220,1)",
+						data: [180000, 530000, 1100000]
+					},
+					{
+						label: "DJI",
+						fillColor: "rgba(192, 57, 43, 0.2)",
+						strokeColor: "rgb(192, 57, 43)",
+						pointColor: "rgb(192, 57, 43)",
+						pointStrokeColor: "#fff",
+						pointHighlightFill: "#fff",
+						pointHighlightStroke: "rgba(151,187,205,1)",
+						data: [117400, 416000, 416000*2]
+					},
+					{
+						label: "3D Robotics",
+						fillColor: "rgba(39, 174, 96, 0.2)",
+						strokeColor: "rgb(39, 174, 96)",
+						pointColor: "rgb(39, 174, 96)",
+						pointStrokeColor: "#fff",
+						pointHighlightFill: "#fff",
+						pointHighlightStroke: "rgba(151,187,205,1)",
+						data: [0, 27000, 46000]
+					}
+				]
+			};
+			var options = {
+				
+				// Boolean - If we want to override with a hard coded scale
+				scaleOverride: true,
+				// ** Required if scaleOverride is true **
+				// Number - The number of steps in a hard coded scale
+				scaleSteps: 20,
+				// Number - The value jump in the hard coded scale
+				scaleStepWidth: 125000/2,
+				// Number - The scale starting value
+				scaleStartValue: 0,	
+			};
+			var myNewChart = new Chart(ctx).Line(data, options);
+			
 		</script>
 	</body>
 </html>
