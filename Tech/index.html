@@ -29,7 +29,7 @@
 			<div id="status">
 				<p>Patience, please<br />This one's big</p>
 				<p>It'll be worth it. We promise.</p>
-				<p><progress id="status2" max="100" value="0"></progress></p>
+				<p><progress id="status2" max="200" value="0"></progress></p>
 			</div>
 			
 		</div>
@@ -196,10 +196,15 @@
 				var loadingStatus = document.getElementById("loadingStatus");
 				var percentLoaded = parseInt(((vid.buffered.end(0) /
 											   vid.duration) * 100));
+				
+				
+				var loadingStatus2 = document.getElementById("loadingStatus");
+				var percentLoaded2 = parseInt(((backVid.buffered.end(0) /
+											   backVid.duration) * 100));
 				//document.getElementById("loadingStatus").innerHTML =   percentLoaded + '%';
-				document.getElementById("status2").value = percentLoaded;
-				console.log("Loaded video " + percentLoaded + "%");
-				if(percentLoaded >= 40){
+				document.getElementById("status2").value = percentLoaded + percentLoaded2;
+				console.log("Loaded video 1 " + percentLoaded + "% and video 2 " + percentLoaded2 + "%");
+				if(percentLoaded + percentLoaded2 >= 80){
 					playVideo();
 				}
 			}
