@@ -188,7 +188,7 @@
 			window.addEventListener('load', eventWindowLoaded, false);
 			function eventWindowLoaded() {
 				vid.addEventListener('progress',updateLoadingStatus,false);
-				vid.addEventListener('canplaythrough',playVideo,false);
+				//vid.addEventListener('canplaythrough',playVideo,false);
 			}
 			
 			function updateLoadingStatus() {
@@ -199,11 +199,15 @@
 				//document.getElementById("loadingStatus").innerHTML =   percentLoaded + '%';
 				document.getElementById("status2").value = percentLoaded;
 				console.log("Loaded video " + percentLoaded + "%");
+				if(percentLoaded == 100){
+					playVideo();
+				}
 			}
 			
 			function playVideo() {
 				document.getElementById("preloader").style.display = "none";
 				document.getElementsByTagName("BODY")[0].style.overflow = "visible";
+				console.log("It claims it can play the video");
 			}
 			
 			
