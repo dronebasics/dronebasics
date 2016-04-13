@@ -65,8 +65,11 @@ section div{
 
 #DownButton{
 	position:fixed;
-	bottom:3vh;
+	bottom:50vh;
+	transform:translateY(50%);
+	transition: all 0.5s ease;
 	right:3vh;
+	z-index:100;
 	background:black;
 	color:white;
 	cursor:pointer;
@@ -77,4 +80,16 @@ section div{
 	border-radius:25px;
 	line-height:53px;
 	font-size:175%;
+	
+	-ms-user-select:none;
+	-moz-user-select:none;
+	-webkit-user-select:none;
+	user-select:none;
+}
+#DownButton:hover{
+	background:white;
+	color:black;
+}
+#DownButton:active{
+	background:grey;
 }

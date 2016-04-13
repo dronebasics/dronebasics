@@ -8,6 +8,8 @@
 		<link rel="stylesheet" href="/uni.css" />
 		<link rel="stylesheet" href="tech.css" />
 		
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+		
 		<!--<script type="text/javascript" src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
 		
 		<!-- Preloader ->
@@ -22,15 +24,15 @@
 		</script>-->
 	</head>
 	<body style="overflow:visible;">
-		<!-- Preloader ->
+		<!-- Preloader -->
 		<div id="preloader">
 			<div id="status">
 				<p>Patience, please<br />This one's big</p>
 				<p>It'll be worth it. We promise.</p>
-				<p><progress id="status2" max="540" value="0"></progress></p>
+				<p><progress id="status2" max="100" value="0"></progress></p>
 			</div>
 			
-		</div>-->
+		</div>
 		
 		
 		
@@ -182,6 +184,25 @@
 			
 			
 			
+			//Preloader
+			window.addEventListener('load', eventWindowLoaded, false);
+			function eventWindowLoaded() {
+				vid.addEventListener('progress',updateLoadingStatus,false);
+				vid.addEventListener('canplaythrough',playVideo,false);
+			}
+			
+			function updateLoadingStatus() {
+				
+				var loadingStatus = document.getElementById("loadingStatus");
+				var percentLoaded = parseInt(((vid.buffered.end(0) /
+											   vid.duration) * 100));
+				//document.getElementById("loadingStatus").innerHTML =   percentLoaded + '%';
+				document.getElementById("status2").value = percentLoaded;
+			}
+			
+			function playVideo() {
+				document.getElementById("preloader").style.display = "none";
+			}
 			
 			
 			</script>

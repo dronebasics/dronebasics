@@ -8,6 +8,8 @@
 		
 		<script src="/img/smooth-scroll.js"></script>
 		<script src="/img/waypoints.js"></script>
+		
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 	</head>
 	<body>
 		<nav>
@@ -22,7 +24,7 @@
 		<div id="DownButton" onclick="MoveDown();">&#9660;</div>
 		
 		<section>
-			<h1>Concerns</h1>
+			<h1 id="MainPageTitle">Concerns</h1>
 		</section>
 		
 		
@@ -63,6 +65,17 @@
 			//--------------------
 			//NAVIGATION WAYPOINTS
 			//--------------------
+			var waypointnav0 = new Waypoint({
+				element: document.getElementById('MainPageTitle'),
+				handler: function(direction) {
+					if(direction == "down"){
+						document.getElementById("DownButton").style.bottom = "3vh";
+						document.getElementById("DownButton").style.transform = "translateY(0%)";
+					} else{
+						document.getElementById("DownButton").removeAttribute("style");
+					}
+				}
+			});
 			var waypointnav1 = new Waypoint({
 				element: document.getElementById('Sec1'),
 				handler: function(direction) {
