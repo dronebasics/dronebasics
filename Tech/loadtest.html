@@ -29,7 +29,7 @@
 			<div id="status">
 				<p>Patience, please<br />This one's big</p>
 				<p>It'll be worth it. We promise.</p>
-				<p><progress id="status2" max="80" value="0"></progress></p>
+				<p><progress id="status2" max="200" value="0"></progress></p>
 			</div>
 			
 		</div>
@@ -119,33 +119,28 @@
 			function eventWindowLoaded() {
 				console.log("Load Start");
 				
-				vid.addEventListener('progress',updateLoadingStatus,false);
+				//vid.addEventListener('progress',updateLoadingStatus,false);
 				
-				
-				//vid.addEventListener('canplaythrough',playVideo,false);
+				vid.addEventListener("progress", progressHandler,false);       
 			}
 			
-			
-			function updateLoadingStatus() {
-				
-				if(vid.readyState != 4){
-					console.log("Not ready yet " + vid.readyState);
-					return;
-				}
-				
-				var loadingStatus = document.getElementById("loadingStatus");
-				var percentLoaded = parseInt(((vid.buffered.end(0) /
-											   vid.duration) * 100));
-				
-				
-				var percentLoaded2 = parseInt(((backVid.buffered.end(0) /
-											   backVid.duration) * 100));
-				//document.getElementById("loadingStatus").innerHTML =   percentLoaded + '%';
-				document.getElementById("status2").value = percentLoaded + percentLoaded2;
-				console.log("Loaded video 1 " + percentLoaded + "% and video 2 " + percentLoaded2 + "%");
-				if(percentLoaded + percentLoaded2 >= 80){
-					playVideo();
-				}
+			progressHandler = function(e) {    
+				if( vid.duration ) {    
+					var percent = (vid.buffered.end(0)/vid.duration) * 100;    
+					var percent2 = (backVid.buffered.end(0) / backVid.duration) * 100;
+					
+					var totale = percent + percent2;
+					
+					console.log( parseInt(totale ));    
+					document.getElementById("status2").value = totale;
+					
+					if( totale >= 200 ) {    
+						console.log("loaded!");   
+						playVideo();
+					}    
+					vid.currentTime++;    
+					backVid.currentTime++;    
+				}    
 			}
 			
 			function playVideo() {
@@ -153,7 +148,7 @@
 				document.getElementsByTagName("BODY")[0].style.overflow = "visible";
 				console.log("It claims it can play the video");
 				
-				
+				vid.removeEventListener("progress", progressHandler,false);   
 				
 				
 				// ======================================================
@@ -187,6 +182,33 @@
 			}
 			
 			
+			/*
+			function addSourceToVideo(element, src, type) {    
+    var source = document.createElement('source');    
+    source.src = src;    
+    source.type = type;    
+    element.appendChild(source);    
+}
+
+var video;       
+$(document).ready(function(){    
+    video = document.getElementsByTagName('video')[0];    
+    addSourceToVideo( video, "http://your-server.com/clip.ogv", "video/ogv");    
+    addSourceToVideo( video, "http://your-server.com/clip.mp4", "video/mp4");    
+    video.addEventListener("progress", progressHandler,false);       
+});
+
+progressHandler = function(e) {    
+    if( video.duration ) {    
+        var percent = (video.buffered.end(0)/video.duration) * 100;    
+        console.log( percent );    
+        if( percent >= 100 ) {    
+            console.log("loaded!");    
+        }    
+        video.currentTime++;    
+    }    
+}
+			*/
 			</script>
 	
 	</body>
