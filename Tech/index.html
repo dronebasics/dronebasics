@@ -8,28 +8,28 @@
 		<link rel="stylesheet" href="/uni.css" />
 		<link rel="stylesheet" href="tech.css" />
 		
-		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
-		
 		<!--<script type="text/javascript" src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
 		
 		<!-- Preloader ->
 		<script type="text/javascript">
-			//<![CDATA[
-				$(window).load(function() { // makes sure the whole site is loaded
-					$('#status').fadeOut(); // will first fade out the loading animation
-					$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
-					$('body').delay(350).css({'overflow':'visible'});
-				})
-			//]]>
+		    //<![CDATA[
+		        $(window).load(function() { // makes sure the whole site is loaded
+		            $('#status').fadeOut(); // will first fade out the loading animation
+		            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+		            $('body').delay(350).css({'overflow':'visible'});
+		        })
+		    //]]>
 		</script>-->
 	</head>
 	<body>
 		<!-- Preloader -->
 		<div id="preloader">
-			<div id="status">
+		    <div id="status">
 				<p>Patience, please<br />This one's big</p>
 				<p>It'll be worth it. We promise.</p>
-				<p><progress id="status2" max="80" value="0"></progress></p>
+				<p><progress id="status2" max="540" value="0"></progress></p>
+				
+				<p id="slowConnect" style="position:relative;display:none;z-index:999999;">Slow connection? Try the compressed version <a href="loadtest.html">here</a>.<br />Warning: may be weird and buggy.</p>
 			</div>
 			
 		</div>
@@ -72,39 +72,18 @@
 		
 		<div id="set-height"></div>
 		<p id="time"></p>
-		<video id="v0" tabindex="0" preload="preload">
-			<source type="video/mp4" src="/img/test.mp4">
-			</source>
-			<p>Sorry, your browser does not support the &lt;video&gt; element.</p>
-		</video>
-		<video id="v1" tabindex="0" preload="preload">
-			<source type="video/mp4" src="/img/test2.mp4">
-			</source>
-			<p>Sorry, your browser does not support the &lt;video&gt; element.</p>
-		</video>
-		<!--<img src="/img/dronevideopics/test000.png" id="v1" alt="A video of a drone" />-->
-
+		<img src="/img/dronevideopics/test000.png" id="v1" alt="A video of a drone" />
+		
 		<script>
 			// select video element
-			var vid = document.getElementById('v0');
-			var backVid = document.getElementById("v1");
-			backVid.style.opacity = 0;
+			var vid = document.getElementById('v1');
+			//var vid = $('#v0')[0]; // jquery option
 			
-			// pause video on load
-			vid.pause();
-			backVid.pause();
-			
-			
-			var scrollDown = true;
-			var lastPos = window.pageYOffset;
-			
-			// pause video on document scroll (stops autoplay once scroll started)
-			window.onscroll = function(){
-				vid.pause();
-			};
-			
-			
-			
+			// refresh video frames on interval for smoother playback
+			setInterval(function(){
+				//vid.currentTime = window.pageYOffset/400;
+				vid.src = "/img/dronevideopics/test" + pad(Math.round(window.pageYOffset / 16), 3) + ".png";
+			}, 100);
 			
 			
 			//
@@ -114,79 +93,59 @@
 			
 			
 			
-			//Preloader
-			window.addEventListener('load', eventWindowLoaded, false);
-			function eventWindowLoaded() {
-				console.log("Load Start");
+			
+			function pad(num, size) {
+				if(num > 540){return 540;} // Quick Hack - CHANGE TO REFLECT NUM OF FRAMES
 				
-				vid.addEventListener('progress',updateLoadingStatus,false);
-				
-				
-				//vid.addEventListener('canplaythrough',playVideo,false);
+				var s = num+"";
+				while (s.length < size) s = "0" + s;
+				return s;
 			}
 			
 			
-			function updateLoadingStatus() {
-				
-				if(vid.readyState != 4){
-					console.log("Not ready yet " + vid.readyState);
-					return;
-				}
-				
-				var loadingStatus = document.getElementById("loadingStatus");
-				var percentLoaded = parseInt(((vid.buffered.end(0) /
-											   vid.duration) * 100));
-				
-				
-				var percentLoaded2 = parseInt(((backVid.buffered.end(0) /
-											   backVid.duration) * 100));
-				//document.getElementById("loadingStatus").innerHTML =   percentLoaded + '%';
-				document.getElementById("status2").value = percentLoaded + percentLoaded2;
-				console.log("Loaded video 1 " + percentLoaded + "% and video 2 " + percentLoaded2 + "%");
-				if(percentLoaded + percentLoaded2 >= 80){
-					playVideo();
-				}
+			
+			
+			
+			
+			
+			//
+			//IMAGE PRELOADING CRAP
+			//
+			var images = new Array()
+			console.log("WARNING About to dump massive stuff to console");
+
+			for(i = 0; i <= 540; i++) {
+				images[i] = new Image()
+				images[i].src = "/img/dronevideopics/test" + pad(i, 3) + ".png";
+				console.log("Loaded " + i + " of 540 images");
 			}
 			
-			function playVideo() {
+			var loadBar = document.getElementById("status2");
+			images[1].onload   = function(){loadBar.value = 1;};
+			images[50].onload  = function(){loadBar.value = 50;};
+			images[100].onload = function(){loadBar.value = 100;};
+			images[150].onload = function(){loadBar.value = 150;};
+			images[200].onload = function(){loadBar.value = 200;};
+			images[250].onload = function(){loadBar.value = 250;};
+			images[300].onload = function(){loadBar.value = 300;};
+			images[350].onload = function(){loadBar.value = 350;};
+			images[400].onload = function(){loadBar.value = 400;};
+			images[450].onload = function(){loadBar.value = 450;};
+			images[500].onload = function(){loadBar.value = 500;};
+			images[540].onload = function(){
+				loadBar.value = 540;
 				document.getElementById("preloader").style.display = "none";
 				document.getElementsByTagName("BODY")[0].style.overflow = "visible";
-				console.log("It claims it can play the video");
-				
-				
-				
-				
-				// ======================================================
-				// refresh video frames on interval for smoother playback
-				// ======================================================
-				
-				setInterval(function(){
-					//var temp = 0;
-					
-					if(window.pageYOffset == lastPos){
-						return;
-					}
-					
-					if(window.pageYOffset > lastPos && !scrollDown){
-						window.setTimeout(function(){vid.style.opacity = 1;backVid.style.opacity = 0;}, 200);
-						scrollDown = true;
-					} else if(window.pageYOffset < lastPos && scrollDown){
-						window.setTimeout(function(){vid.style.opacity = 0;backVid.style.opacity = 1;}, 200);
-						scrollDown = false;
-					}
-					
-					if(scrollDown){
-						vid.currentTime = window.pageYOffset/400;
-					} else{
-						backVid.currentTime = (8650 - window.pageYOffset) / 400;
-					}
-					
-					
-					lastPos = window.pageYOffset;
-				}, 100);
+			};
+			
+			
+			
+			
+			
+			setTimeout(slowLoad, 15000);
+			function slowLoad(){
+				document.getElementById("slowConnect").style.display = "block";
 			}
-			
-			
 			</script>
 	
 	</body>
