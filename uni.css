@@ -5,6 +5,10 @@ html, body{
 	margin:0;
 	font-family: 'Arimo', sans-serif;
 }
+body{
+	min-width:500px;
+	overflow-x:auto;
+}
 
 h1, h2, h3, h4, h5, h6{
 	font-family: 'Open Sans', sans-serif;
@@ -58,7 +62,7 @@ nav li:nth-child(1) a{
 	border-bottom-left-radius:20px;
 	border-left-style:solid;
 }
-nav li:nth-child(4) a{
+nav li:nth-child(5) a{
 	border-top-right-radius:20px;
 	border-bottom-right-radius:20px;
 	border-right-width:5px;
