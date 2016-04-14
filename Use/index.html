@@ -208,6 +208,16 @@
 				document.getElementById("preloader").style.display = "none";
 				document.getElementsByTagName("BODY")[0].style.overflow = "visible";
 			};
+			
+			
+			
+			function pad(num, size) {
+				if(num > 540){return 540;} // Quick Hack - CHANGE TO REFLECT NUM OF FRAMES
+				
+				var s = num+"";
+				while (s.length < size) s = "0" + s;
+				return s;
+			}
 		</script>
 		
 	</body>
