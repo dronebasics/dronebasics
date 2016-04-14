@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="hist.css" />
 		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.1.1/Chart.js"></script>
+		<script src="/img/waypoints.js"></script>
 		
 		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 	</head>
@@ -23,10 +24,34 @@
 		
 		<h1>History</h1>
 		
+		
 		<section>
-			<h2>Growth Over Time</h2>
-			<canvas id="myChart" width="400" height="400"></canvas>
+			<h2>Beginnings</h2>
+			<div id="UseChart" class="SideChart">
+				<h3>Common Uses</h3>
+				<canvas id="myChart2" width="400" height="400"></canvas>
+			</div>
+			<p>This is content that the chart sould holefully wrap around if it were well designed</p>
 		</section>
+		
+		<section>
+			<h2>Developments</h2>
+		</section>
+		
+		<section>
+			<h2>Widespread Adoption</h2>
+			<div id="GrowthChart" class="SideChart">
+				<h3>Sales Over Time</h3>
+				<canvas id="myChart" width="400" height="400"></canvas>
+			</div>
+		</section>
+		
+		
+		
+		
+		
+		
+		<div style="height:200vh;"></div>
 		
 		<script>
 			var ctx = document.getElementById("myChart").getContext("2d");
@@ -78,7 +103,124 @@
 				scaleStartValue: 0,	
 			};
 			var myNewChart = new Chart(ctx).Line(data, options);
+			myNewChart.stop();
 			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			var ctx2 = document.getElementById("myChart2").getContext("2d");
+			var data2 = [
+				{
+					value: 301,
+					color:"#c0392b",
+					highlight: "#FF5A5E",
+					label: "Photography"
+				},
+				{
+					value: 223,
+					color: "#2980b9",
+					highlight: "#3498db",
+					label: "Surveying"
+				},
+				{
+					value: 183,
+					color: "#f39c12",
+					highlight: "#FFC870",
+					label: "Spotting"
+				},
+				{
+					value: 25,
+					color: "#27ae60",
+					highlight: "#2ecc71",
+					label: "Inspection"
+				},
+				{
+					value: 14,
+					color: "#8e44ad",
+					highlight: "#9b59b6",
+					label: "Training"
+				}
+			];
+			var myPieChart = new Chart(ctx2).Pie(data2);
+			myPieChart.stop();
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			function loadChart(e){
+				switch(e){
+					case 1:
+						myNewChart.render();
+						break;
+					case 2:
+						myPieChart.render();
+						break;
+				}
+				
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			//--------------------
+			//NAVIGATION WAYPOINTS
+			//--------------------
+			var chart1 = false;
+			var chart2 = false;
+			
+			var waypointnav0 = new Waypoint({
+				element: document.getElementById('GrowthChart'),
+				handler: function(direction) {
+					/*if(direction == "down"){
+						document.getElementById("DownButton").style.bottom = "3vh";
+						document.getElementById("DownButton").style.transform = "translateY(0%)";
+					} else{
+						document.getElementById("DownButton").removeAttribute("style");
+					}*/
+					if(!chart1){
+						loadChart(1);
+						chart1 = true;
+					}
+					
+				},
+				offset: '50%'
+			});
+			var waypointnav1 = new Waypoint({
+				element: document.getElementById('UseChart'),
+				handler: function(direction) {
+					if(!chart2){
+						loadChart(2);
+						chart2 = true;
+					}
+					
+				},
+				offset: '50%'
+			});
 		</script>
 	</body>
 </html>

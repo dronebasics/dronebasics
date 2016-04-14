@@ -1,0 +1,32 @@
+body{
+	background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a8/2_Parrot_AR.Drone_2.0_in_flight.jpg");
+	background-attachment:fixed;
+	background-size:cover;
+	background-position: center center;
+}
+
+h1{
+    transform:translateY(-50%);
+	font-size:300%;
+	background:rgba(236, 240, 241,0.8);
+	max-width:80vw;
+	margin: 0 auto;
+	margin-top:40vh;
+	text-align:center;
+	margin-bottom:30vh;
+}
+
+
+.SideChart{
+	float:right;
+	/*background:rgba(255,255,255,0.4);*
+	padding:20px;*/
+}
+
+section{
+	width:80vw;
+	margin: 2vh auto;
+	padding: 5vh;
+	background: #ecf0f1;
+	min-height:500px;
+}
