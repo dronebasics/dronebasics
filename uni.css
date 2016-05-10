@@ -83,3 +83,19 @@ nav .CurrPage a:hover{
 	background:black;
 	color:white;
 }
+
+
+
+
+
+
+
+
+
+
+.mdl-layout__tab:visited{
+	color:rgba(255,255,255,.6);
+}
+.is-active{
+	font-weight:bold !important;
+}
