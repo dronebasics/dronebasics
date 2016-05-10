@@ -6,26 +6,42 @@
 		<link rel="stylesheet" href="/uni.css" />
 		<link rel="stylesheet" href="hist.css" />
 		
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-orange.min.css" />
+		<script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+		<script src="/navBar.js"></script>
+		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.1.1/Chart.js"></script>
 		<script src="/img/waypoints.js"></script>
 		
 		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 	</head>
 	<body>
-		<nav>
-			<ul>
-				<li><a href="/">Home</a></li>
-				<li class="CurrPage"><a>History</a></li>
-				<li><a href="/Use">Uses</a></li>
-				<li><a href="/Tech">Technology</a></li>
-				<li><a href="/Prob">Concerns</a></li>
-			</ul>
+		
+		<nav id="navBar" class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+			<header class="mdl-layout__header" style="position:fixed;top:-64px;z-index:99999;">
+				<div class="mdl-layout__header-row"></div>
+				<!-- Tabs -->
+				<div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+					<a href="#" 	onclick="event.preventDefault();navBar(1, 2);"	id="navLink1" class="mdl-layout__tab">Home</a>
+					<a href="/Hist" onclick="event.preventDefault();" 				id="navLink2" class="mdl-layout__tab is-active">History</a>
+					<a href="/Use" 	onclick="event.preventDefault();navBar(3, 2);" 	id="navLink3" class="mdl-layout__tab">Uses</a>
+					<a href="/Tech" onclick="event.preventDefault();navBar(4, 2);" 	id="navLink4" class="mdl-layout__tab">Technology</a>
+					<a href="/Prob" onclick="event.preventDefault();navBar(5, 2);" 	id="navLink5" class="mdl-layout__tab">Concerns</a>
+				</div>
+			</header>
+			
+			<main class="mdl-layout__content">
+				
+			</main>
 		</nav>
 		
-		<h1>History</h1>
+		<!--<h1>History</h1>-->
+		<div class="mdl-card" id="BigTitle">
+			<h1>History</h1>
+		</div>
 		
-		
-		<section>
+		<section class="mdl-card">
 			<h2>Beginnings</h2>
 			<div id="UseChart" class="SideChart">
 				<h3>Common Uses</h3>
@@ -34,7 +50,7 @@
 			<p>Looking at the wide variety of drones in use today, doing everything from photography to surveying (for more details, see the <a href="/Use/">uses</a> page), it’s hard to imagine where this all must have started. However, drones didn't always exist in their modern forms. At first, they were purely experimental, based on an idea. The first drone we have record of come from Nikola Tesla. It wasn’t a remote-controlled aerial drone, but rather a “voice-activated” unmanned boat (in reality, he was using radio waves to turn motors on and off). The first unmanned aerial vehicle came from enthusiast and film star Reginald Denny. It was the size of a very small plane, big enough for a person to fit into.</p>
 		</section>
 		
-		<section>
+		<section class="mdl-card">
 			<h2>Widespread Adoption</h2>
 			<div id="GrowthChart" class="SideChart">
 				<h3>Sales Over Time</h3>
@@ -235,23 +251,7 @@
 			//
 			//IMAGE PRELOADING CRAP
 			//
-			var images = new Array()
-			console.log("WARNING About to dump massive stuff to console");
-
-			for(i = 0; i <= 540; i++) {
-				images[i] = new Image()
-				images[i].src = "/img/dronevideopics/test" + pad(i, 3) + ".png";
-				console.log("Loaded " + i + " of 540 images");
-			}
-			
-			
-			function pad(num, size) {
-				if(num > 540){return 540;} // Quick Hack - CHANGE TO REFLECT NUM OF FRAMES
-				
-				var s = num+"";
-				while (s.length < size) s = "0" + s;
-				return s;
-			}
+			preloadImages();
 		</script>
 	</body>
 </html>

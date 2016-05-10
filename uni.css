@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 
-nav{
+/*nav{
 	position:fixed;
 	left:50%;
 	transform:translateX(-50%);
@@ -83,7 +83,7 @@ nav .CurrPage a:hover{
 	background:black;
 	color:white;
 }
-
+*/
 
 
 

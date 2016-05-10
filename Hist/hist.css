@@ -6,15 +6,15 @@ body{
 	
 }
 
-h1{
+#BigTitle{
     transform:translateY(-50%);
 	font-size:300%;
-	background:rgba(236, 240, 241,0.8);
-	max-width:80vw;
+	width:80vw;
 	margin: 0 auto;
 	margin-top:40vh;
 	text-align:center;
 	margin-bottom:30vh;
+	min-height:initial;
 }
 
 p{
@@ -26,12 +26,13 @@ p{
 	float:right;
 	/*background:rgba(255,255,255,0.4);*
 	padding:20px;*/
+	padding-left:2vw;
 }
 
 section{
-	width:80vw;
+	width:80vw !important;
 	margin: 2vh auto;
 	padding: 5vh;
-	background: #ecf0f1;
 	min-height:500px;
+	display:block !important;
 }
