@@ -50,8 +50,9 @@ section{
 	padding-bottom:15vh;
 }
 section div{
-	background:#2c3e50 !important;;
-	color:white !important;
+	/*background:#2c3e50 !important;;*/
+	background: #212121 !important;
+	color:#FAFAFA !important;
 	text-align:left;
 	position:relative;
 	top:10vh;
@@ -59,7 +60,7 @@ section div{
 	width:60vw !important;;
 }
 section div .mdl-card__supporting-text, section div .mdl-card__title{
-	color:rgba(255, 255, 255, 0.9);
+	color:#FAFAFA;
 }
 
 #Sec1{
