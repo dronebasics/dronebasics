@@ -7,15 +7,26 @@ body{
 	overflow-x:hidden;
 }
 
-h1{
+#BigTitle{
     transform:translateY(-50%);
 	font-size:300%;
-	background:rgba(236, 240, 241,0.8);
-	max-width:80vw;
-	margin: 0 auto;
-	position:relative;
-	top:50vh;
+	width:80vw;
+	margin: 40vh auto;
+	min-height:initial;
+	padding-bottom:0;
 }
+/*
+#BigTitle{
+    transform:translateY(-50%);
+	font-size:300%;
+	width:80vw;
+	margin: 0 auto;
+	margin-top:40vh;
+	text-align:center;
+	margin-bottom:30vh;
+	min-height:initial;
+}
+*/
 
 /*h2{
 	padding: 5vh;
@@ -36,20 +47,22 @@ section{
 	background-size:cover;
 	min-height:100vh;
 	padding:0;
+	padding-bottom:15vh;
 }
 section div{
-	padding: 2vw;
-	background:#2c3e50;
-	color:white;
+	background:#2c3e50 !important;;
+	color:white !important;
 	text-align:left;
 	position:relative;
 	top:10vh;
 	left:5vw;
-	width:60vw;
+	width:60vw !important;;
+}
+section div .mdl-card__supporting-text, section div .mdl-card__title{
+	color:rgba(255, 255, 255, 0.9);
 }
 
 #Sec1{
-	
     background-image:url('https://c2.staticflickr.com/4/3094/2904994626_64c79250d4_b.jpg');
 }
 #Sec2{
@@ -65,12 +78,12 @@ section div{
 
 #DownButton{
 	position:fixed;
-	bottom:50vh;
-	transform:translateY(50%);
-	transition: all 0.5s ease;
-	right:3vh;
+	top:41vh;
+	transform:translateY(50%)translateX(-50%);
+	transition: top 0.5s ease;
+	left:50%;
 	z-index:100;
-	background:black;
+	/*background:black;
 	color:white;
 	cursor:pointer;
 	text-align:center;
@@ -84,12 +97,12 @@ section div{
 	-ms-user-select:none;
 	-moz-user-select:none;
 	-webkit-user-select:none;
-	user-select:none;
-}
+	user-select:none;*/
+}/*
 #DownButton:hover{
 	background:white;
 	color:black;
 }
 #DownButton:active{
 	background:grey;
-}
+}*/

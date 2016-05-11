@@ -6,13 +6,18 @@
 		<link rel="stylesheet" href="/uni.css" />
 		<link rel="stylesheet" href="prob.css" />
 		
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-orange.min.css" />
+		<script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+		<script src="/navBar.js"></script>
+		
 		<script src="/img/smooth-scroll.js"></script>
 		<script src="/img/waypoints.js"></script>
 		
 		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 	</head>
 	<body>
-		<nav>
+		<!--nav>
 			<ul>
 				<li><a href="/">Home</a></li>
 				<li><a href="/Hist">History</a></li>
@@ -20,36 +25,65 @@
 				<li><a href="/Tech">Technology</a></li>
 				<li class="CurrPage"><a>Concerns</a></li>
 			</ul>
+		</nav-->
+		<nav id="navBar" class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+			<header class="mdl-layout__header" style="position:fixed;top:-64px;z-index:99999;">
+				<div class="mdl-layout__header-row"></div>
+				<!-- Tabs -->
+				<div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+					<a href="#" 	onclick="event.preventDefault();navBar(1, 5);"	id="navLink1" class="mdl-layout__tab">Home</a>
+					<a href="/Hist" onclick="event.preventDefault();navBar(2, 5);"	id="navLink2" class="mdl-layout__tab">History</a>
+					<a href="/Use" 	onclick="event.preventDefault();navBar(3, 5);" 	id="navLink3" class="mdl-layout__tab">Uses</a>
+					<a href="/Tech" onclick="event.preventDefault();navBar(4, 5);" 	id="navLink4" class="mdl-layout__tab">Technology</a>
+					<a href="/Prob" onclick="event.preventDefault();" 				id="navLink5" class="mdl-layout__tab is-active">Concerns</a>
+				</div>
+			</header>
+			<main class="mdl-layout__content"></main>
 		</nav>
 		
-		<div id="DownButton" onclick="MoveDown();">&#9660;</div>
+		<!--<div id="DownButton" onclick="MoveDown();">&#9660;</div>-->
+		<button onclick="MoveDown();" id="DownButton" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+			<i class="material-icons">&#xE313;</i>
+		</button>
 		
-		<section>
-			<h1 id="MainPageTitle">Concerns</h1>
+		<section class="mdl-card" id="BigTitle">
+			<h1>Concerns</h1>
 		</section>
 		
 		
 		<section id="Sec1">
-			<div>
+			<!--<div>
 				<h2><span>Annoyances</span></h2>
 				<p>Stop and listen closely. Do you hear that? That’s the sound of your computer fan, possibly refrigerator, traffic, people outside, music playing from down the hall, and a dog barking outside. Noise pollution is unwanted or harmful levels of noise (EPA). Noise pollution comes primarily from traffic and airports (Nunez). However, as drones become more and more prevalent in today’s society, they are contributing more and more to noise pollution. It’s aesthetically detrimental as well as being physically and psychologically harmful. Some direct results of noise pollution are elevated blood pressure, heart disease, and psychological trauma, and has been associated with hypertension, reading impairment, and anxiety (Nunez). Noise pollution is becoming such a problem that Title IV of the Clean Air Act is devoted to noise pollution, such as studying its effects and investigating serious problems that arise from noise pollution. While many think that this is a serious overreaction to a few flying machines, it should also be noted that the FAA projected over 1 million drones would be purchased during the 2015 holiday season (Murphy).</p>
+			</div>-->
+			<div class="mdl-card">
+				<h2 class="mdl-card__title"><span class="mdl-card__title-text">Annoyances</span></h2>
+				<p class="mdl-card__supporting-text">Stop and listen closely. Do you hear that? That’s the sound of your computer fan, possibly refrigerator, traffic, people outside, music playing from down the hall, and a dog barking outside. Noise pollution is unwanted or harmful levels of noise (EPA). Noise pollution comes primarily from traffic and airports (Nunez). However, as drones become more and more prevalent in today’s society, they are contributing more and more to noise pollution. It’s aesthetically detrimental as well as being physically and psychologically harmful. Some direct results of noise pollution are elevated blood pressure, heart disease, and psychological trauma, and has been associated with hypertension, reading impairment, and anxiety (Nunez). Noise pollution is becoming such a problem that Title IV of the Clean Air Act is devoted to noise pollution, such as studying its effects and investigating serious problems that arise from noise pollution. While many think that this is a serious overreaction to a few flying machines, it should also be noted that the FAA projected over 1 million drones would be purchased during the 2015 holiday season (Murphy).</p>
 			</div>
 		</section>
+		<!--
+		<div id="Card5" class="mdl-card Card" data-6100="opacity:0;" data-6400="opacity:1;" data-7400="opacity:1;" data-7700="opacity:0;">
+			<h2 class="mdl-card__title"><span class="mdl-card__title-text">Landing Mechanism</span></h2>
+			<p class="mdl-card__supporting-text">This is one of the most important parts of the robot. It provides the robot with stability on the ground while acting as a shock absorber when the drone lands or takes off. It is much like the suspension system in your car.</p>
+		</div>
+		-->
 		
 		<section id="Sec2">
-			<div>
-			<h2><span>Privacy</span></h2>
-			<p>Technology today is found almost everywhere. There are cameras in our phones, in our glasses, and now in our drones. And as technology becomes more commonplace, privacy becomes harder and harder to maintain. The same is true with drones. Imagine trying to hide from a small, white object hiding in the clouds. In addition, it is remotely controlled and you don’t know where the “pilot” is. The brutal truth is that almost nothing can be done by the private sector or any single person or company. There is nothing to stop anyone from spying on others with a drone. Government regulation is the only method of controlling them that has any reasonable chance of working. The government agency in charge of regulating drones is the FAA. The FAA only started putting policies in place recently, but it has put a few key ones, such as Notice 8900.292, which creates regulations on videos posted online involving drones.</p>
+			<div class="mdl-card">
+			<h2 class="mdl-card__title"><span class="mdl-card__title-text">Privacy</span></h2>
+			<p class="mdl-card__supporting-text">Technology today is found almost everywhere. There are cameras in our phones, in our glasses, and now in our drones. And as technology becomes more commonplace, privacy becomes harder and harder to maintain. The same is true with drones. Imagine trying to hide from a small, white object hiding in the clouds. In addition, it is remotely controlled and you don’t know where the “pilot” is. The brutal truth is that almost nothing can be done by the private sector or any single person or company. There is nothing to stop anyone from spying on others with a drone. Government regulation is the only method of controlling them that has any reasonable chance of working. The government agency in charge of regulating drones is the FAA. The FAA only started putting policies in place recently, but it has put a few key ones, such as Notice 8900.292, which creates regulations on videos posted online involving drones.</p>
 			</div>
 		</section>
 		
 		<section id="Sec3">
-			<div>
-			<h2><span>Security</span></h2>
-			<p>There are a lot of security issues that come with having drones. By far the most crucial part of security is safety. With more and more drones flying in the sky, more and more are finding their way into congested airspace and potentially causing problems. The total number of unsafe UAS operations in 2015 was 1,133, compared to 238 in 2014, which is an increase of 476% (Morris and Thurston). Given the fact that drones are being purchased at an increasing rate, these numbers are only going to increase in the future, assuming the policies of the FAA don’t change. These reports include UAS’s in congested airspace, near passenger aircraft or airports, and interference with emergency response efforts such as wildfires.</p>
+			<div class="mdl-card">
+			<h2 class="mdl-card__title"><span class="mdl-card__title-text">Security</span></h2>
+				<span class="mdl-card__supporting-text" style="display:block;">
+					<p>There are a lot of security issues that come with having drones. By far the most crucial part of security is safety. With more and more drones flying in the sky, more and more are finding their way into congested airspace and potentially causing problems. The total number of unsafe UAS operations in 2015 was 1,133, compared to 238 in 2014, which is an increase of 476% (Morris and Thurston). Given the fact that drones are being purchased at an increasing rate, these numbers are only going to increase in the future, assuming the policies of the FAA don’t change. These reports include UAS’s in congested airspace, near passenger aircraft or airports, and interference with emergency response efforts such as wildfires.</p>
 			
-			<p>The FAA has specifically mentioned several events directly involving UAS’s that resulted in the harm of people, property, or wildlife. One example that could have been a lot worse was one that involved a California wildfire. The FAA permitted temporary access to the airspace by aircraft to help fight the fire, and several UAS’s were deployed. All other aircraft were grounded and all firefighting forces were to help contain the wildfire. There were 2 cases of evasive action taken to avoid midair collisions and responding aircraft were forced to land for 2.5 hours while the situation was resolved. There are a couple other incidents that are worth mentioning. On October 26, 2015 a single UAS flew into primary power conductors which knocked out a single span of power line in West Hollywood, California. The estimated initial impact from the power outage was 640 people. If the same incident were to occur again in a more populated area, it could have far more serious impacts. There was yet another accident involving UAS’s that had a much more obvious effect. On September 12, 2015 debris from a UAS struck an 11-month-old baby in the head during an outdoor movie in Pasadena, California. She received treatment at Huntington Memorial Hospital and was shortly released without complications. While an incident such as this wasn’t very severe, it had the potential to be far worse, and only goes to show that incidents such as these are not fiction and can, in fact, occur.</p>
-				</div>
+					<p>The FAA has specifically mentioned several events directly involving UAS’s that resulted in the harm of people, property, or wildlife. One example that could have been a lot worse was one that involved a California wildfire. The FAA permitted temporary access to the airspace by aircraft to help fight the fire, and several UAS’s were deployed. All other aircraft were grounded and all firefighting forces were to help contain the wildfire. There were 2 cases of evasive action taken to avoid midair collisions and responding aircraft were forced to land for 2.5 hours while the situation was resolved. There are a couple other incidents that are worth mentioning. On October 26, 2015 a single UAS flew into primary power conductors which knocked out a single span of power line in West Hollywood, California. The estimated initial impact from the power outage was 640 people. If the same incident were to occur again in a more populated area, it could have far more serious impacts. There was yet another accident involving UAS’s that had a much more obvious effect. On September 12, 2015 debris from a UAS struck an 11-month-old baby in the head during an outdoor movie in Pasadena, California. She received treatment at Huntington Memorial Hospital and was shortly released without complications. While an incident such as this wasn’t very severe, it had the potential to be far worse, and only goes to show that incidents such as these are not fiction and can, in fact, occur.</p>
+					</div>
+				</span>
 		</section>
 		
 		<script>
@@ -67,11 +101,11 @@
 			//NAVIGATION WAYPOINTS
 			//--------------------
 			var waypointnav0 = new Waypoint({
-				element: document.getElementById('MainPageTitle'),
+				element: document.getElementById('BigTitle'),
 				handler: function(direction) {
 					if(direction == "down"){
-						document.getElementById("DownButton").style.bottom = "3vh";
-						document.getElementById("DownButton").style.transform = "translateY(0%)";
+						document.getElementById("DownButton").style.top = "85vh";
+						document.getElementById("DownButton").style.transform = "translateY(0%)translateX(-50%)";
 					} else{
 						document.getElementById("DownButton").removeAttribute("style");
 					}
@@ -125,25 +159,7 @@
 			//
 			//IMAGE PRELOADING CRAP
 			//
-			var images = new Array()
-			console.log("WARNING About to dump massive stuff to console");
-
-			for(i = 0; i <= 540; i++) {
-				images[i] = new Image()
-				images[i].src = "/img/dronevideopics/test" + pad(i, 3) + ".png";
-				console.log("Loaded " + i + " of 540 images");
-			}
-			
-			
-			
-			
-			function pad(num, size) {
-				if(num > 540){return 540;} // Quick Hack - CHANGE TO REFLECT NUM OF FRAMES
-				
-				var s = num+"";
-				while (s.length < size) s = "0" + s;
-				return s;
-			}
+			preloadImages();
 		</script>
 		
 	</body>

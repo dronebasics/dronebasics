@@ -20,11 +20,8 @@
 }
 
 .Card{
-	position:fixed;
-	padding:1vw;
-	opacity:0;
+	position:fixed !important;
 	z-index:9;
-	background: rgba(236, 240, 241,0.7);
 }
 
 #Card1{
