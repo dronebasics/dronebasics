@@ -51,23 +51,29 @@ function navBar(id, orig){
  */
 
 function preloadImages(){
-	setTimeout(function(){
-		var images = new Array()
-		console.log("WARNING About to dump massive stuff to console");
+	if(document.getElementById("navLink1").getElementsByTagName("SPAN")[0]){
+		console.log("Begin Preloading Images")
+		actuallyLoadThem();
+	} else{
+		setTimeout(preloadImages, 1000);
+	}
+}
+function actuallyLoadThem(){
+	var images = new Array()
+	console.log("WARNING About to dump massive stuff to console");
 	
-		for(i = 0; i <= 540; i++) {
-			images[i] = new Image()
-			images[i].src = "/img/dronevideopics/test" + pad(i, 3) + ".png";
-			console.log("Loaded " + i + " of 540 images");
-		}
+	for(i = 0; i <= 540; i++) {
+		images[i] = new Image()
+		images[i].src = "/img/dronevideopics/test" + pad(i, 3) + ".png";
+		console.log("Loaded " + i + " of 540 images");
+	}
+	
+	
+	function pad(num, size) {
+		if(num > 540){return 540;} // Quick Hack - CHANGE TO REFLECT NUM OF FRAMES
 		
-		
-		function pad(num, size) {
-			if(num > 540){return 540;} // Quick Hack - CHANGE TO REFLECT NUM OF FRAMES
-			
-			var s = num+"";
-			while (s.length < size) s = "0" + s;
-			return s;
-		}
-	}, 2000);
+		var s = num+"";
+		while (s.length < size) s = "0" + s;
+		return s;
+	}
 }
