@@ -131,6 +131,7 @@ p{
 	z-index:1;
 	overflow-y:hidden;
 	display:inline-block;
+	background:initial !important;
 	/*border-radius:3vh;*/
 }
 .Box .Pic .PicOverlay{
