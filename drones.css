@@ -36,6 +36,8 @@ h2{
 	
 	
 	bottom:12vh;left:40vw;
+	
+	background-size:200% 200%;
 }
 
 a{
@@ -62,6 +64,7 @@ p{
 	z-index:-1;
 	
 	background-image:url("/img/clouds-161581.svg");
+	background-size: 100% 200%;
 }
 
 
@@ -163,14 +166,14 @@ p{
 }
 
 #BG5{
-	width:120%;
+	min-width:120vw;
 	right:0;
-	height:150vh;
-	top:-49vh;
+	min-height:100vh;
+	bottom:0;
 	position:fixed;
 	z-index:-1;
 	
-	background-image:url("/img/SaroshDraws/Schoolno_kids.svg");
+	background-image:url("/img/SaroshDraws/iehack/Schoolno_kids.png");
 	background-position: 100% 100%;
 }
 
