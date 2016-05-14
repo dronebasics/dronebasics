@@ -99,3 +99,10 @@ nav .CurrPage a:hover{
 .is-active{
 	font-weight:bold !important;
 }
+
+
+
+.mdl-card{
+	min-height:inherit !important;
+	min-height:initial !important;
+}

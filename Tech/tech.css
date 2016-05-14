@@ -1,3 +1,7 @@
+body{
+	min-height:0 !important;
+}
+
 #set-height {
   display: block;
   height: 10000px;
