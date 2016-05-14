@@ -109,3 +109,7 @@ section div .mdl-card__supporting-text, section div .mdl-card__title{
 #DownButton:active{
 	background:grey;
 }*/
+
+.mdl-card{
+	min-height:0 !important;
+}
