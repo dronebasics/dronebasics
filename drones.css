@@ -1,6 +1,7 @@
 body{
 	background:linear-gradient(#7ccce8, white, #7ccce8);
 	width:100%;
+	min-height:0 !important;
 }
 #MainSplash{
 	position:fixed;
