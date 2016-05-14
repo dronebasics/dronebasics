@@ -5,8 +5,6 @@ body{
 	background-position: center;
 	background-size:cover;
 	overflow-x:hidden;
-	
-	min-height:0 !important;
 }
 
 #BigTitle{
@@ -60,6 +58,8 @@ section div{
 	top:10vh;
 	left:5vw;
 	width:60vw !important;;
+	
+	min-height:0 !important;
 }
 section div .mdl-card__supporting-text, section div .mdl-card__title{
 	color:#FAFAFA;
