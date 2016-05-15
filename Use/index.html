@@ -11,6 +11,9 @@
 		<script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 		<script src="/navBar.js"></script>
 		
+		<script src="/img/smooth-scroll.js"></script>
+		<script src="/img/waypoints.js"></script>
+		
 		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 	</head>
 	<body>
@@ -34,6 +37,10 @@
 			<h1>Uses of Drones</h1>
 		</section>
 		
+		
+		<button onclick="MoveDown();" id="DownButton" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+			<i class="material-icons">&#xE313;</i>
+		</button>
 		
 		
 		<section id="Del">
@@ -349,12 +356,94 @@
 		
 		
 		<script>
+			var currLoc = 0;
+		
+			smoothScroll.init(); 
+			function MoveDown(){
+				if(currLoc != 3){
+					//smoothScroll.animateScroll(null, '#Sec' + (currLoc + 1));
+					var temp = currLoc + 1;
+					switch(temp){
+						case 1:
+							smoothScroll.animateScroll(null, '#Del', {offset: 100});
+							break;
+						case 2:
+							smoothScroll.animateScroll(null, '#Film', {offset: 100});
+							break;
+						case 3:
+							smoothScroll.animateScroll(null, '#Fun', {offset: 100});
+							break;
+					}
+				}
+				
+			}
+			
+			//--------------------
+			//NAVIGATION WAYPOINTS
+			//--------------------
+			var waypointnav0 = new Waypoint({
+				element: document.getElementById('BigTitle'),
+				handler: function(direction) {
+					if(direction == "down"){
+						document.getElementById("DownButton").style.top = "85vh";
+						document.getElementById("DownButton").style.transform = "translateY(0%)translateX(-50%)";
+					} else{
+						document.getElementById("DownButton").removeAttribute("style");
+					}
+				}
+			});
+			var waypointnav1 = new Waypoint({
+				element: document.getElementById('Del'),
+				handler: function(direction) {
+					if(direction == "down"){
+						currLoc = 1;
+					} else{
+						currLoc = 0;
+					}
+				},
+				offset:100
+			});
+			var waypointnav2 = new Waypoint({
+				element: document.getElementById('Film'),
+				handler: function(direction) {
+					if(direction == "down"){
+						currLoc = 2;
+					} else{
+						currLoc = 1;
+					}
+				},
+				offset:100
+			});
+			var waypointnav3 = new Waypoint({
+				element: document.getElementById('Fun'),
+				handler: function(direction) {
+					if(direction == "down"){
+						currLoc = 3;
+					} else{
+						currLoc = 2;
+					}
+				},
+				offset:100
+			});
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			//
 			//IMAGE PRELOADING CRAP
 			//
 			preloadImages();
-			
-			//alert("This page is unfinished. Don't worry - I'm working on it.");
 		</script>
 		
 	</body>

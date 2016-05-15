@@ -79,13 +79,7 @@ section div .mdl-card__supporting-text, section div .mdl-card__title{
 
 
 
-#DownButton{
-	position:fixed;
-	top:41vh;
-	transform:translateY(50%)translateX(-50%);
-	transition: top 0.5s ease;
-	left:50%;
-	z-index:100;
+
 	/*background:black;
 	color:white;
 	cursor:pointer;
@@ -100,8 +94,9 @@ section div .mdl-card__supporting-text, section div .mdl-card__title{
 	-ms-user-select:none;
 	-moz-user-select:none;
 	-webkit-user-select:none;
-	user-select:none;*/
-}/*
+	user-select:none;
+}
+
 #DownButton:hover{
 	background:white;
 	color:black;
