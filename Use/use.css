@@ -269,7 +269,7 @@ p{
 	}
 	.Text{
 		opacity:1 !important;
-		transform:translateY(-4px) !important;
+		transform:translateY(-5px) !important;
 		position:static !important;
 		width:100% !important;
 		margin:0 !important;
@@ -296,5 +296,8 @@ p{
 	
 	section{
 		padding-bottom:40px !important;
+	}
+	#BigTitle{
+		padding-bottom:0 !important;
 	}
 }
