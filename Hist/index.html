@@ -75,8 +75,8 @@
 				datasets: [
 					{
 						label: "Parrot",
-						fillColor: "#249AD6",//"rgba(41, 128, 185, 1)",
-						strokeColor: "white",//"rgb(41, 128, 185)",
+						fillColor: "rgba(41, 128, 185, 0.2)",
+						strokeColor: "rgb(41, 128, 185)",
 						pointColor: "rgb(41, 128, 185)",
 						pointStrokeColor: "#fff",
 						pointHighlightFill: "#fff",
@@ -85,8 +85,8 @@
 					},
 					{
 						label: "DJI",
-						fillColor: "#F4801F", //rgba(192, 57, 43, 1)",
-						strokeColor: "white",//"rgb(192, 57, 43)",
+						fillColor: "rgba(192, 57, 43, 0.3)",
+						strokeColor: "rgb(192, 57, 43)",
 						pointColor: "rgb(192, 57, 43)",
 						pointStrokeColor: "#fff",
 						pointHighlightFill: "#fff",
@@ -95,8 +95,8 @@
 					},
 					{
 						label: "3D Robotics",
-						fillColor: "rgb(80, 184, 72)", //"rgba(39, 174, 96, 1)",
-						strokeColor: "white",//"rgb(39, 174, 96)",
+						fillColor: "rgba(39, 174, 96, 0.4)",
+						strokeColor: "rgb(39, 174, 96)",
 						pointColor: "rgb(39, 174, 96)",
 						pointStrokeColor: "#fff",
 						pointHighlightFill: "#fff",
@@ -162,7 +162,7 @@
 					label: "Training"
 				}
 			];
-			var myPieChart = new Chart(ctx2).Doughnut(data2);
+			var myPieChart = new Chart(ctx2).Pie(data2);
 			myPieChart.stop();
 			
 			
