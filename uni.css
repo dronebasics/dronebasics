@@ -104,3 +104,8 @@ nav .CurrPage a:hover{
 	min-height:inherit !important;
 	min-height:initial !important;
 }
+
+
+.mdl-layout__tab-bar{
+	height:initial !important;
+}
