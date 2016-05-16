@@ -90,11 +90,12 @@ p{
 }
 
 #Pic2{
-	background-image:url('https://upload.wikimedia.org/wikipedia/en/8/8c/Nuvola_apps_package.svg.png');
-	width:8vw;
-	height:8vw;
+	/*background-image:url('https://upload.wikimedia.org/wikipedia/en/8/8c/Nuvola_apps_package.svg.png');*/
+	background-image:url(/img/SaroshDraws/box.svg);
+	width:7.8vw;
+	height:7.8vw;
 	position:fixed;
-	transform:translateX(-4.5%)scale(0.94);
+	transform:translateX(-3%)scale(0.94);
 }
 #BG2{
 	min-width:150%;
