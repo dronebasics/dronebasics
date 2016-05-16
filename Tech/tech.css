@@ -71,10 +71,15 @@ body{
 
 
 
-
+/*
 body {
-    overflow: hidden;
-}
+    /*overflow: hidden;
+	/*
+									THIS IS WHAT I CHANGED
+									CHANGE IT BACK IF NECESSARY
+	
+	
+}*/
 
 /* Preloader */
 

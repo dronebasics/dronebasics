@@ -5,6 +5,8 @@ body{
 	background-position: center;
 	background-size:cover;
 	overflow-x:hidden;
+	
+	width:100vw !important;
 }
 
 /*h1{
