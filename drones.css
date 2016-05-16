@@ -34,12 +34,13 @@ h2{
 	z-index:0;
 	
 	transform:rotateY(180deg);
-	background-image:url("/img/SaroshDraws/Side_Drone.svg");
+	/*background-image:url("/img/SaroshDraws/Side_Drone.svg");*/
+	background-image:url("/img/SaroshDraws/newestdrone.svg");
 	
 	
 	bottom:12vh;left:40vw;
 	
-	background-size:200% 200%;
+	background-size:100% 100%;
 }
 
 a{
@@ -93,6 +94,7 @@ p{
 	width:8vw;
 	height:8vw;
 	position:fixed;
+	transform:translateX(-4.5%)scale(0.94);
 }
 
 
