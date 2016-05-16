@@ -96,7 +96,14 @@ p{
 	position:fixed;
 	transform:translateX(-4.5%)scale(0.94);
 }
-
+#BG2{
+	min-width:150%;
+	min-height:120vh;
+	position:fixed;
+	z-index:-1;
+	
+	background-image:url("/img/SaroshDraws/iehack/dronepage2.png");
+}
 
 
 #Head3{
