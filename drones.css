@@ -143,7 +143,7 @@ p{
 	text-align:left;
 }
 #Pic4{
-	background-image:url("https://pixabay.com/static/uploads/photo/2012/04/10/17/24/airplane-26560_960_720.png");
+	background-image:url("/img/airplane-26560_960_720.png");
 	height:100vw;
 	width:200vw;
 	position:fixed;
